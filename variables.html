@@ -7,20 +7,32 @@
     <title>Variables</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-       
+        main {
+            display: flex;
+            padding: 2%;
+            color: #c6c8da;
+            font-size: 1.2em;
+            line-height: 1.5;
+            letter-spacing: 1.2px;
+            text-align: justify;
+        }
+
+        main>section {
+            margin-left: 5%;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <figure>
-            <img src="" alt="logo" title="logo" />
+            <img src="img/logo.png" alt="logo" title="logo" />
         </figure>
         <h1>JavaScript School</h1>
         <ul>
-            <li><a href="">Variables</a></li>
-            <li><a href="">Funciones</a></li>
-            <li><a href="">Métodos</a></li>
+            <li><a id="activo" href="variables.html">Variables</a></li>
+            <li><a href="funciones.html">Funciones</a></li>
+            <li><a href="metodos.html">Métodos</a></li>
         </ul>
         <form action="">
             <label for="">User:</label>
@@ -33,27 +45,77 @@
         </form>
     </header>
     <nav>
-        <h2><a id="activo" href="">JavaScript</a></h2>
+        <h2><a href="index.html">JavaScript</a></h2>
         <ul>
-            <li><a href="">Bifurcaciones</a></li>
-            <li><a href="">Bucles</a></li>
-            <li><a href="">Flujos</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">PRUEBA</a></li>
+            <li><a href="bifurcaciones.html">Bifurcaciones</a></li>
+            <li><a href="bucles.html">Bucles</a></li>
+            <li><a href="flujos.html">Flujos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="prueba.html">PRUEBA</a></li>
         </ul>
     </nav>
     <main>
         <article>
-            <section>
-                <h2>Welcome to JavaScript</h2>
-                <p> JavaSCript, un lenguaje interpretado, multi-plataforma,
-                    dinámicamente tipado, orientado a objeto, y que se ejecuta en un
-                    host (por ejemplo un navegador web)</p>
-            </section>
-            <figure>
-                <img src="img/homepage.png" alt="homepage" title="homepage" />
-            </figure>
+            <h2>La variable</h2>
+            <p>Una variable es un espacio reservado en la memoria del ordenador que nos permite almacenar un valor.</p>
+            <h3>Características</h3>
+            <ul>
+                <li>El valor almacenado no es fijo y puede variar con el tiempo (de
+                    ahí el nombre de variable).</li>
+                <li>Una variable puede ser leída y escrita múltiples veces
+                    durante el transcurso del programa.</li>
+                <li>Las variables en JavaScript se declaran antes de ser
+                    utilizadas, ya que es en el proceso de declaración cuando se
+                    reserva el espacio en memoria.
+                </li>
+                <li>Las variables en cualquier lenguaje de programación disponen
+                    de tipo, identificador y valor. Esto es lo que debe ser
+                    declarado.</li>
+                <li>En JavaScript, no se indica el tipo del dato,
+                    puesto que se determina dinámicamente:
+                    var resultado = 0;</li>
+            </ul>
         </article>
+        <section>
+            <h3>Ámbito de variables</h3>
+            <ul>
+                <li>El ámbito o alcance de una variable es la porción de código
+                    en la que existe.</li>
+                <li>Fuera de su ámbito, la variable no podrá ser accedida para
+                    lectura ni escritura.</li>
+                <li>Existen por lo general dos ámbitos diferentes en los lenguajes de
+                    programación: local y global, aunque también puede existir el
+                    ámbito de sentencia de bloque (C, Java…).</li>
+                <li>
+                    <ul>
+                        <li>Ámbito global: en JS la variable tendrá
+                            vigencia mientras esté abierta la
+                            ventana del navegador.</li>
+                        <li>Ámbito local: la variable se encuentra
+                            disponible solamente dentro de la
+                            función en la que es declarada.</li>
+                        <li>Ámbito de sentencia de bloque: la
+                            variable existe solamente dentro del
+                            bloque en el que ha sido declarada.</li>
+                    </ul>
+                </li>
+                <li>Tipos de datos en JS
+                    <ul>
+                        <li>String: cadenas de texto.</li>
+                        <li>Number: números. En JS todos los números se encuentran en
+                            coma flotante de 64 bits de precisión (double). Existen
+                            también tres valores adicionales para representar NaN,
+                            +Infinity y –Infinity.</li>
+                        <li>Boolean: true/false (verdadero/falso).</li>
+                        <li>Array: es una lista de elementos de otros tipos.</li>
+                        <li>Object: objeto.</li>
+                        <li>Null: nulo.</li>
+                        <li>Undefined: no definido.</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </section>
     </main>
     <footer>
         <section>

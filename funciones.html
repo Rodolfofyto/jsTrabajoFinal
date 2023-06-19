@@ -7,20 +7,32 @@
     <title>Funciones</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-        
+        main {
+            display: flex;
+            padding: 2%;
+            color: #c6c8da;
+            font-size: 1.2em;
+            line-height: 1.5;
+            letter-spacing: 1.2px;
+            text-align: justify;
+        }
+
+        main>section {
+            margin-left: 5%;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <figure>
-            <img src="" alt="logo" title="logo" />
+            <img src="img/logo.png" alt="logo" title="logo" />
         </figure>
         <h1>JavaScript School</h1>
         <ul>
-            <li><a href="">Variables</a></li>
-            <li><a href="">Funciones</a></li>
-            <li><a href="">Métodos</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a id="activo" href="funciones.html">Funciones</a></li>
+            <li><a href="metodos.html">Métodos</a></li>
         </ul>
         <form action="">
             <label for="">User:</label>
@@ -33,27 +45,96 @@
         </form>
     </header>
     <nav>
-        <h2><a id="activo" href="">JavaScript</a></h2>
+        <h2><a href="index.html">JavaScript</a></h2>
         <ul>
-            <li><a href="">Bifurcaciones</a></li>
-            <li><a href="">Bucles</a></li>
-            <li><a href="">Flujos</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">PRUEBA</a></li>
+            <li><a href="bifurcaciones.html">Bifurcaciones</a></li>
+            <li><a href="bucles.html">Bucles</a></li>
+            <li><a href="flujos.html">Flujos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="prueba.html">PRUEBA</a></li>
         </ul>
     </nav>
     <main>
         <article>
-            <section>
-                <h2>Welcome to JavaScript</h2>
-                <p> JavaSCript, un lenguaje interpretado, multi-plataforma,
-                    dinámicamente tipado, orientado a objeto, y que se ejecuta en un
-                    host (por ejemplo un navegador web)</p>
-            </section>
+            <h2>Funciones concepto y uso básico</h2>
+            <p>Una función (también llamada subrutina, subprograma,
+                procedimiento o rutina) es un segmento independiente de código,
+                diseñado para realizar una tarea específica.</p>
+            <p>Una función es, en esencia, un conjunto de instrucciones de
+                programación agrupadas, de forma que las podamos ejecutar
+                desde cualquier punto de nuestro programa tantas veces como sea
+                necesario.
+            </p>
+            <p>JavaScript no diferencia función de procedimiento, así que, por
+                ahora, hablaré solamente de funciones. Más adelante también
+                introduciré el concepto de método (que es una función que se
+                aplica sobre un objeto)</p>
+            <p>
+                Para llamar a una función, se pone el nombre de la función seguida
+                de los paréntesis. Dentro de los paréntesis se indicarían los
+                argumentos o parámetros de la función, si los tuviera.
+            </p>
             <figure>
-                <img src="img/homepage.png" alt="homepage" title="homepage" />
+                <img src="img/bannerInicio.webp" alt="bannerInicio" title="bannerInicio" />
             </figure>
         </article>
+        <section>
+            <h2>Ámbito o alcance</h2>
+            <ul>
+                <li>Las variables que creamos en una función, deben tener ámbito
+                    local a la función. Es una mala práctica usar variables globales
+                    dentro de las funciones,</li>
+                <li>Los parámetros que pasamos a la función, también se comportan
+                    como variables locales a la misma.</li>
+                <li>Si hay alguna variable que se use exclusivamente dentro de un
+                    bloque (por ejemplo en un bucle), se debe declarar siempre local al
+                    bloque.
+                </li>
+                <li>El uso de variables globales solamente se debe realizar en casos
+                    que lo requieran, es decir, en variables que tienen que existir
+                    mientras esté la ventana del navegador abierta.</li>
+                <li>El uso indiscriminado de variables globales consume más memoria
+                    y provoca errores de programación. Además, las funciones que
+                    requieren de la existencia de determinadas variables globales, no
+                    son independientes ni reutilizables.
+                </li>
+                <li>Paso por valor o referencia</li>
+                <li>Como los parámetros se comportan como variables locales,
+                    también podemos leer o escribir en ellos.</li>
+                <li>Ahora bien… si cambiamos el valor de un parámetro dentro de una
+                    función, ¿cambiará el valor de la variable que usamos en la
+                    llamada a función?.</li>
+                <li>Paso por valor:</li>
+                <li>Si el paso del parámetro se hace
+                    por valor, lo que se pasa es una
+                    copia del valor original.</li>
+                <li>Modificar el parámetro no implica
+                    modificar la variable original.</li>
+                <li>Paso por referencia:</li>
+                <li>Si el paso del parámetro se
+                    hace por referencia, lo que se
+                    pasa es una referencia a la
+                    variable original.</li>
+                <li>Modificar el parámetro sí implica
+                    modificar la variable original.</li>
+                <li>En JavaScript, cuando pasamos una variable de tipo básico
+                    (number, boolean, string) a una función, si en ella modificamos
+                    su valor, la variable original no cambia. Se ha realizado un paso
+                    por valor.</li>
+                <li>En JavaScript, cuando pasamos objetos (Object o array),
+                    modificar ese objeto en la función implica modificar el objeto
+                    original. Se realiza un paso por referencia, pasando la posición en
+                    memoria donde se encuentra el objeto original.
+                </li>
+                <li>Esto implica que cuando pasamos un objeto a una función y lo
+                    modificamos, el objeto real quedará modificado.</li>
+                <li>Por ejemplo, si pasamos una imagen (object) a una función y
+                    alteramos su altura, la imagen quedará modificada. Si, por el
+                    contrario pasamos solamente la altura (number) y la
+                    modificamos, la imagen no quedará modificada.
+                </li>
+            </ul>
+        </section>
     </main>
     <footer>
         <section>

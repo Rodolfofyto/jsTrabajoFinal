@@ -7,20 +7,32 @@
     <title>Métodos</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-       
+        main>article {
+            display: flex;
+            padding: 2%;
+            color: #c6c8da;
+            font-size: 1.2em;
+            line-height: 1.5;
+            letter-spacing: 1.2px;
+            text-align: justify;
+        }
+
+        main>article>section {
+            margin: 1% 2%;
+        }
     </style>
 </head>
 
 <body>
     <header>
         <figure>
-            <img src="" alt="logo" title="logo" />
+            <img src="img/logo.png" alt="logo" title="logo" />
         </figure>
         <h1>JavaScript School</h1>
         <ul>
-            <li><a href="">Variables</a></li>
-            <li><a href="">Funciones</a></li>
-            <li><a href="">Métodos</a></li>
+            <li><a href="variables.html">Variables</a></li>
+            <li><a href="funciones.html">Funciones</a></li>
+            <li><a id="activo" href="metodos.html">Métodos</a></li>
         </ul>
         <form action="">
             <label for="">User:</label>
@@ -33,26 +45,64 @@
         </form>
     </header>
     <nav>
-        <h2><a id="activo" href="">JavaScript</a></h2>
+        <h2><a href="index.html">JavaScript</a></h2>
         <ul>
-            <li><a href="">Bifurcaciones</a></li>
-            <li><a href="">Bucles</a></li>
-            <li><a href="">Flujos</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">PRUEBA</a></li>
+            <li><a href="bifurcaciones.html">Bifurcaciones</a></li>
+            <li><a href="bucles.html">Bucles</a></li>
+            <li><a href="flujos.html">Flujos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="prueba.html">PRUEBA</a></li>
         </ul>
     </nav>
     <main>
         <article>
             <section>
-                <h2>Welcome to JavaScript</h2>
-                <p> JavaSCript, un lenguaje interpretado, multi-plataforma,
-                    dinámicamente tipado, orientado a objeto, y que se ejecuta en un
-                    host (por ejemplo un navegador web)</p>
+                <h2>Cadena de texto</h2>
+                <p> Los Strings son cadenas de texto, usadas para almacenar y
+                    manipular textos. En JavaScript, las cadenas de texto se pueden declarar de
+                    forma rápida poniéndolas entre comillas, ya sean dobles o
+                    simples. También pueden ser declaradas como si fueran objetos. De
+                    hecho, las cadenas de texto son objetos</p>
+                <h3>Concatenar cadenas</h3>
+                <p>Podemos usar el operador + para concatenar
+                    cadenas de texto, esto resultará útil en muchas situaciones.
+                    También podemos usar el operador += para ir añadiendo
+                    texto sobre un mismo String.</p>
+                <figure>
+                    <img src="img/bannerInicio2.webp" alt="bannerInicio2" title="bannerInicio2" />
+                </figure>
             </section>
-            <figure>
-                <img src="img/homepage.png" alt="homepage" title="homepage" />
-            </figure>
+            <section>
+                <h3>Métodos</h3>
+                <p>La Clase String proporciona métodos para el tratamiento de las cadenas de caracteres: acceso a
+                    caracteres individuales, buscar y extraer una subcadena, copiar cadenas, convertir cadenas a
+                    mayúsculas o minúsculas, etc.</p>
+                <ul>
+                    <li>CHARAT: Este método no tiene más misterio: devuelve la letra del índice indicado. Sólo hay que
+                        recordar que toda serie de índices en JavaScript empieza por 0. </li>
+                    <li>CONCAT: concat() funciona de la misma manera que como vimos para las matrices. Al igual que para
+                        ellas, no sólo se pueden concatenar dos cadenas declaradas previamente, sino también se puede
+                        concatenar un literal a una cadena declarada:</li>
+                    <li>INDEXOF: Este método devuelve el primer índice donde se dé una coincidencia entre la cadena
+                        especificada como argumento y la cadena de la que se emplea el método.</li>
+                    <li>LASTINDEXOF: Igual que el anterior, pero busca la última coincidencia. También devuelve -1 si no
+                        hay tal:</li>
+                    <li>REPLACE: Para replace() hay que especificar dos parámetros. El primero es la cadena que se
+                        busca, y el segundo aquella por la que quiere sustituirse.</li>
+                    <li>SEARCH: search() busca la cadena suministrada como parámetro, pero a diferencia de match() no
+                        devuelve la subcadena coincidente, sino el índice de la primera coincidencia.
+                        Si no hay concidencia, devuelve -1:</li>
+                    <li>SLICE: slice() devuelve un fragmento de una cadena.
+                        A este método se le pueden suministrar uno o dos parámetros: el primero es obligatorio y tiene
+                        que ser un número natural; el segundo tiene que ser un entero, y es opcional.</li>
+                    <li>SPLIT: Este método devuelve una matriz con tantos valores como fragmentos resulten de dividir la
+                        cadena, tomando como separador el caracter o cadena suministrado como parámetro.</li>
+                    <li>SUBSTRING: Este método también es similar a slice(), salvo que no acepta un segundo valor
+                        negativo.</li>
+                    <li>TOUPPERCASE: Simplemente devuelve la cadena en mayúsculas.</li>
+                    <li>TOLOWERCASE: Como el anterior, pero en minúsculas.</li>
+                </ul>
+            </section>
         </article>
     </main>
     <footer>
