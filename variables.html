@@ -9,16 +9,19 @@
     <style>
         main {
             display: flex;
-            padding: 2%;
+            flex-wrap: wrap;
             color: #c6c8da;
             font-size: 1.2em;
             line-height: 1.5;
             letter-spacing: 1.2px;
             text-align: justify;
+            align-content: center;
         }
 
-        main>section {
-            margin-left: 5%;
+        main>article,section {
+            min-width: 400px;
+            max-width:750px;
+            padding: 2%;
         }
     </style>
 </head>
@@ -29,11 +32,6 @@
             <img src="img/logo.png" alt="logo" title="logo" />
         </figure>
         <h1>JavaScript School</h1>
-        <ul>
-            <li><a id="activo" href="variables.html">Variables</a></li>
-            <li><a href="funciones.html">Funciones</a></li>
-            <li><a href="metodos.html">Métodos</a></li>
-        </ul>
         <form action="">
             <label for="">User:</label>
             <input type="text" name="user" />
@@ -47,9 +45,10 @@
     <nav>
         <h2><a href="index.html">JavaScript</a></h2>
         <ul>
-            <li><a href="bifurcaciones.html">Bifurcaciones</a></li>
+            <li><a id="activo" href="variables.html">Variables</a></li>
+            <li><a href="funciones.html">Funciones</a></li>
+            <li><a href="metodos.html">Métodos</a></li>
             <li><a href="bucles.html">Bucles</a></li>
-            <li><a href="flujos.html">Flujos</a></li>
             <li><a href="contacto.html">Contacto</a></li>
             <li><a href="prueba.html">PRUEBA</a></li>
         </ul>
