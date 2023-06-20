@@ -7,7 +7,36 @@
     <title>Prueba</title>
     <link rel="stylesheet" href="style.css" />
     <style>
+        main {
+            color: #b6b9d8;
+            display: flex;
+        }
 
+        main>article {
+            flex: 1;
+            padding: 3%;
+            text-align: justify;
+            font-size: 1.5em;
+        }
+
+        main>section {
+            flex: 1;
+            padding: 3%;
+            text-align: justify;
+        }
+
+        main input,
+        label,
+        select,
+        button {
+            padding: 1%;
+            margin-bottom: 0.5%;
+        }
+
+        main label {
+            display: inline-block;
+            min-width: 100px;
+        }
     </style>
 </head>
 
@@ -32,14 +61,46 @@
         <ul>
             <li><a href="variables.html">Variables</a></li>
             <li><a href="funciones.html">Funciones</a></li>
-            <li><a href="metodos.html">Métodos</a></li>
-            <li><a href="bucles.html">Bucles</a></li>
+            <li><a href="metodos.html">Métodos</a></li>           
             <li><a href="contacto.html">Contacto</a></li>
             <li><a id="activo" href="prueba.html">PRUEBA</a></li>
         </ul>
     </nav>
     <main>
-        
+        <article>
+            <h2>Calculadora de velocidad</h2>
+            <p>Me diante la siguiente calculadora podrás obtener la velocidad de un vehículo a partir de la distancia de
+                frenada. Para ello deberá rellenar los datos solicitados a continuación y presionar el boton de
+                calcular.
+            </p>
+            <label for="inDistancia">Distancia de la huella de frenada(en metros): </label><input type="text"
+                id="inDistancia" /><br />
+            <label for="inPendiente">Pendiente en % (positiva hacia arriba, negativa hacia abajo): </label><input
+                type="text" id="inPendiente" /><br />
+            <button onclick="velocidad(parseFloat(inDistancia.value), parseFloat(inPendiente.value));">Calcular</button>
+            <button onclick="resetea();">Reset</button>
+            <br />
+            <span>La velocidad es de: </span><output id="outResultado"></output>
+        </article>
+        <section>
+            <h2>Formulario</h2>
+            <hr />
+            <label for="inNombre">Nombre:</label><input type="text" id="inNombre" /><br />
+            <label for="inEdad">Edad:</label><input type="number" id="inEdad" /><br />
+            <label>Estado civil:</label>
+            <select name="inEstadoCivil" id="inEstadoCivil">
+                <option value="soltero">Soltero</option>
+                <option value="casado">Casado</option>
+                <option value="otros">Otros</option>
+            </select><br />
+            <input type="checkbox" id="inParo">
+            <label>en paro</label><br />
+            <button
+                onclick="procesar(inNombre.value, parseInt(inEdad.value), inEstadoCivil.value, inParo.checked);">Procesar</button>
+            <h3>Resultado</h3>
+            <hr />
+            <span id="resultado"></span>
+        </section>
     </main>
     <footer>
         <section>
@@ -70,6 +131,64 @@
             </li>
         </ul>
     </footer>
+    <script>
+        //Nombre: velocidad()
+        //Descripción: recoge el la distancia y la pendiente ofrecidad por el usuario y calcula la velocidad haciendo uso de 2 constantes.
+        //Recibe:  la distancia y la pendiente ofrecidas por el usuario
+        //Devuelve: la velocidad del vehículo
+        function velocidad(D, p) {
+            let F = 0.7;
+            let V = 15.9 * Math.sqrt(D * (F + p / 100));
+            document.getElementById('outResultado').innerHTML = V.toFixed(2);
+        }
+
+        //Nombre: resetea()
+        //Descripción: recoge los inputs introducidos por el usuario y el resultado y los combierte en  cadena de texto en blanco.
+        //Recibe:  los valores de la distancia,la pendiente  ofrecidas por el usuario y. el output resultado del cálculo
+        //Devuelve: los  valores de los inputs y el oputput resultado, en cadena de texto en blanco
+        function resetea() {
+            inDistancia.value = '';
+            inPendiente.value = '';
+            document.getElementById('outResultado').innerHTML = '';
+        }
+
+
+        //Nombre: procesar()
+        //Descripción: recoge los datos introducidos por el ususario y cuando presionamos el boton procesar, nos va mostrando en string el resultado.
+        //Recibe:  los campos rellenados por el usuario
+        //Devuelve: un parrafo en string concatenando los campos en dependecia de lo que haya seleccionado el unsuario.
+
+        function procesar(n, e, est, pa) {
+            var Resultado = '';
+
+            Resultado += 'Hola ' + n[0].toUpperCase() + n.substring(1).toLowerCase();
+
+            if (pa) {
+                Resultado += ' parece que estás en paro, ';
+            } else {
+                Resultado += ' suerte tienes que trabajar con la que está cayendo, ';
+            }
+
+            if (e >= 16 && e <= 65) {
+                Resultado += 'pues estás en edad de trabajar. ';
+            } else {
+                Resultado += 'pero con la edad que tienes no deberias trabajar. ';
+            }
+
+            switch (est) {
+                case "soltero": Resultado += "Cuando llegues a casa, aprovecha para jugar a la play."; break;
+                case "casado": Resultado += "Cuando llegues a casa, mira una peli con tu pareja."; break; break;
+                case "otros": Resultado += "Cuando llegues a casa, saluda a quien te encuentres."; break; break;
+            }
+
+            let edades = " Durante toda tu vida has tenido: ";
+            for(let i = 0; i <= e; i++) {
+                edades += i + ", ";
+            }
+
+            document.getElementById('resultado').innerHTML = Resultado + edades + ' años.';
+        }
+    </script>
 </body>
 
 </html>
